@@ -1,12 +1,13 @@
 webpackJsonp([1],{
 
-/***/ 105:
+/***/ 106:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChartsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login_login__ = __webpack_require__(83);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -16,6 +17,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 /**
@@ -33,7 +35,7 @@ var ChartsPage = (function () {
             { data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B' },
             { data: [18, 48, 77, 9, 100, 27, 40], label: 'Series C' }
         ];
-        this.lineChartLabels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+        this.lineChartLabels = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
         this.lineChartOptions = {
             responsive: true
         };
@@ -83,6 +85,16 @@ var ChartsPage = (function () {
         this.barChartDataNegative = [
             { data: [65, 59, -80, 81, 56, -55, 40], label: 'Series A' },
             { data: [28, -48, 40, 19, -86, 27, 90], label: 'Series B' }
+        ];
+        this.periods = ['2006', '2007', '2008', '2009', '2010', '2011'];
+        this.periodsData = [
+            { text: '2006', value: '2006' },
+            { text: '2007', value: '2007' },
+            { text: '2008', value: '2008' },
+            { text: '2009', value: '2009' },
+            { text: '2010', value: '2010' },
+            { text: '2011', value: '2011' },
+            { text: '2012', value: '2012' },
         ];
     }
     ChartsPage.prototype.ionViewDidLoad = function () {
@@ -144,6 +156,7 @@ var ChartsPage = (function () {
         cloneNegative[0].data = dataNegative;
         this.barChartDataNegative = cloneNegative;
         this.randomize();
+        console.log(this.periods);
         /**
          * (My guess), for Angular to recognize the change in the dataset
          * it has to change the dataset variable directly,
@@ -151,12 +164,17 @@ var ChartsPage = (function () {
          * assign it;
          */
     };
+    ;
+    ChartsPage.prototype.logout = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__login_login__["a" /* LoginPage */]);
+    };
+    ;
     return ChartsPage;
 }());
 ChartsPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'page-charts',template:/*ion-inline-start:"/Users/dimatreefonov/projects/prognozIonicApp/src/pages/charts/charts.html"*/'<!--\n  Generated template for the ChartsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Charts</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <div ion-fixed>\n  <ion-grid>\n    <ion-row>\n      <ion-col col-sm-12 col-md-6>\n        <div class="col-md-1">\n          <div style="display: block">\n            <canvas baseChart height="130"\n                    [datasets]="barChartData2"\n                    [labels]="barChartLabels"\n                    [options]="barChartOptions"\n                    [legend]="barChartLegend"\n                    [chartType]="barChartType"\n                    (chartHover)="chartHovered($event)"\n                    (chartClick)="chartClicked($event)"></canvas>\n          </div>\n          <button (click)="randomizeBar()">Update</button>\n        </div>\n      </ion-col>\n\n      <ion-col col-sm-12 col-md-6>\n        <div class="col-md-6">\n          <div style="display: block;">\n            <canvas baseChart height="130"\n                    [datasets]="lineChartData"\n                    [labels]="lineChartLabels"\n                    [options]="lineChartOptions"\n                    [colors]="lineChartColors"\n                    [legend]="lineChartLegend"\n                    [chartType]="lineChartType"\n                    (chartHover)="chartHovered($event)"\n                    (chartClick)="chartClicked($event)"></canvas>\n          </div>\n        </div>\n      </ion-col>\n      <ion-col col-sm-12 col-md-6>\n        <div class="col-md-6">\n          <div style="display: block">\n            <canvas baseChart height="130"\n                    [datasets]="barChartDataNegative"\n                    [labels]="barChartLabels"\n                    [options]="barChartOptions"\n                    [legend]="barChartLegend"\n                    [chartType]="barChartType"\n                    (chartHover)="chartHovered($event)"\n                    (chartClick)="chartClicked($event)"></canvas>\n          </div>\n          <button (click)="randomizeBar()">Update</button>\n        </div>\n      </ion-col>\n      <ion-col col-sm-12 col-md-6>\n        <div class="col-md-6">\n          <div style="display: block">\n            <canvas baseChart height="130"\n                    [datasets]="barChartData"\n                    [labels]="barChartLabels"\n                    [options]="barChartOptions"\n                    [legend]="barChartLegend"\n                    [chartType]="barChartType"\n                    (chartHover)="chartHovered($event)"\n                    (chartClick)="chartClicked($event)"></canvas>\n          </div>\n          <button (click)="randomizeBar()">Update</button>\n        </div>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n    </div>\n</ion-content>\n'/*ion-inline-end:"/Users/dimatreefonov/projects/prognozIonicApp/src/pages/charts/charts.html"*/,
+        selector: 'page-charts',template:/*ion-inline-start:"/Users/dimatreefonov/projects/prognozIonicApp/src/pages/charts/charts.html"*/'<!--\n  Generated template for the ChartsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar hideBackButton="true">\n    <ion-buttons start>\n      <button ion-button (click)="logout()">\n        Выйти\n      </button>\n    </ion-buttons>\n    <ion-title>Charts</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <div ion-fixed>\n\n      <ion-item>\n        <ion-label>Periods</ion-label>\n        <ion-select [(ngModel)]="periods" multiple="true">\n          <ion-option *ngFor="let o of periodsData" [value]="o.value">{{o.text}}</ion-option>\n        </ion-select>\n      </ion-item>\n  <ion-grid>\n    <ion-row>\n      <ion-col col-sm-12 col-md-6>\n        <div class="col-md-1">\n          <div style="display: block">\n            <canvas baseChart height="120"\n                    [datasets]="barChartData2"\n                    [labels]="barChartLabels"\n                    [options]="barChartOptions"\n                    [legend]="barChartLegend"\n                    [chartType]="barChartType"\n                    (chartHover)="chartHovered($event)"\n                    (chartClick)="chartClicked($event)"></canvas>\n          </div>\n          <button (click)="randomizeBar()">Update</button>\n        </div>\n      </ion-col>\n\n      <ion-col col-sm-12 col-md-6>\n        <div class="col-md-6">\n          <div style="display: block;">\n            <canvas baseChart height="120"\n                    [datasets]="lineChartData"\n                    [labels]="lineChartLabels"\n                    [options]="lineChartOptions"\n                    [colors]="lineChartColors"\n                    [legend]="lineChartLegend"\n                    [chartType]="lineChartType"\n                    (chartHover)="chartHovered($event)"\n                    (chartClick)="chartClicked($event)"></canvas>\n          </div>\n        </div>\n      </ion-col>\n      <ion-col col-sm-12 col-md-6>\n        <div class="col-md-6">\n          <div style="display: block">\n            <canvas baseChart height="120"\n                    [datasets]="barChartDataNegative"\n                    [labels]="barChartLabels"\n                    [options]="barChartOptions"\n                    [legend]="barChartLegend"\n                    [chartType]="barChartType"\n                    (chartHover)="chartHovered($event)"\n                    (chartClick)="chartClicked($event)"></canvas>\n          </div>\n          <button (click)="randomizeBar()">Update</button>\n        </div>\n      </ion-col>\n      <ion-col col-sm-12 col-md-6>\n        <div class="col-md-6">\n          <div style="display: block">\n            <canvas baseChart height="120"\n                    [datasets]="barChartData"\n                    [labels]="barChartLabels"\n                    [options]="barChartOptions"\n                    [legend]="barChartLegend"\n                    [chartType]="barChartType"\n                    (chartHover)="chartHovered($event)"\n                    (chartClick)="chartClicked($event)"></canvas>\n          </div>\n          <button (click)="randomizeBar()">Update</button>\n        </div>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n    </div>\n</ion-content>\n'/*ion-inline-end:"/Users/dimatreefonov/projects/prognozIonicApp/src/pages/charts/charts.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
 ], ChartsPage);
@@ -165,7 +183,7 @@ ChartsPage = __decorate([
 
 /***/ }),
 
-/***/ 114:
+/***/ 115:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -178,11 +196,11 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 114;
+webpackEmptyAsyncContext.id = 115;
 
 /***/ }),
 
-/***/ 156:
+/***/ 157:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -202,48 +220,8 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 156;
+webpackAsyncContext.id = 157;
 module.exports = webpackAsyncContext;
-
-/***/ }),
-
-/***/ 200:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__charts_charts__ = __webpack_require__(105);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var LoginPage = (function () {
-    function LoginPage(navCtrl) {
-        this.navCtrl = navCtrl;
-    }
-    LoginPage.prototype.login = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__charts_charts__["a" /* ChartsPage */]);
-    };
-    return LoginPage;
-}());
-LoginPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'page-login',template:/*ion-inline-start:"/Users/dimatreefonov/projects/prognozIonicApp/src/pages/login/login.html"*/'<ion-content padding id="login" style="background-color:#F2F4F5;">\n<div class="login-form">\n  <h1 id="login-heading1" style="color:#000000;font-weight:600;text-align:center;">\n    Добро пожаловать\n  </h1>\n  <div id="login-markdown1" style="text-align:center;" class="show-list-numbers-and-dots">\n    <p style="color:#333333;font-size:16px;opacity:0.5;">\n      Демо-стенд HyperHive &amp; PROGNOZ\n    </p>\n  </div>\n  <form id="login-form1">\n    <ion-item id="login-input2" style="margin-bottom:17px;">\n      <ion-label></ion-label>\n      <ion-input type="text" placeholder="Логин" name="login"></ion-input>\n    </ion-item>\n    <ion-item id="login-input3">\n      <ion-label></ion-label>\n      <ion-input type="password" placeholder="Пароль" name="password"></ion-input>\n    </ion-item>\n  </form>\n  <button id="login-button1" (click)="login()" ion-button color="positive" block style="font-weight:500;border-radius:40px 40px 40px 40px;margin-top:30px;background-color:#47B37D;">\n    ВОЙТИ\n  </button>\n  <button id="login-button3" ion-button block style="font-weight:500;border-radius:40px 40px 40px 40px;margin-top:21px;color:#333333; background-color:#EDEFF0">\n    <ion-icon name="trash"></ion-icon>\n    Очистить кэш\n  </button>\n  </div>\n</ion-content>'/*ion-inline-end:"/Users/dimatreefonov/projects/prognozIonicApp/src/pages/login/login.html"*/
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
-], LoginPage);
-
-//# sourceMappingURL=login.js.map
 
 /***/ }),
 
@@ -317,13 +295,13 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(382);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_login_login__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_login_login__ = __webpack_require__(83);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_dashboard_dashboard__ = __webpack_require__(391);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_tableinfo_tableinfo__ = __webpack_require__(201);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_page4_page4__ = __webpack_require__(393);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_charts_charts__ = __webpack_require__(105);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_status_bar__ = __webpack_require__(196);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_splash_screen__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_charts_charts__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_status_bar__ = __webpack_require__(197);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_splash_screen__ = __webpack_require__(200);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__angular_http__ = __webpack_require__(202);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_ng2_charts__ = __webpack_require__(394);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_ng2_charts___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12_ng2_charts__);
@@ -399,9 +377,9 @@ AppModule = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(196);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(199);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_login_login__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(197);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_login_login__ = __webpack_require__(83);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -763,6 +741,46 @@ webpackContext.keys = function webpackContextKeys() {
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
 webpackContext.id = 426;
+
+/***/ }),
+
+/***/ 83:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__charts_charts__ = __webpack_require__(106);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var LoginPage = (function () {
+    function LoginPage(navCtrl) {
+        this.navCtrl = navCtrl;
+    }
+    LoginPage.prototype.login = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__charts_charts__["a" /* ChartsPage */]);
+    };
+    return LoginPage;
+}());
+LoginPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'page-login',template:/*ion-inline-start:"/Users/dimatreefonov/projects/prognozIonicApp/src/pages/login/login.html"*/'<ion-content padding id="login" style="background-color:#F2F4F5;">\n<div class="login-form">\n  <h1 id="login-heading1" style="color:#000000;font-weight:600;text-align:center;">\n    Добро пожаловать\n  </h1>\n  <div id="login-markdown1" style="text-align:center;" class="show-list-numbers-and-dots">\n    <p style="color:#333333;font-size:16px;opacity:0.5;">\n      Демо-стенд HyperHive &amp; PROGNOZ\n    </p>\n  </div>\n  <form id="login-form1">\n    <ion-item id="login-input2" style="margin-bottom:17px;">\n      <ion-label></ion-label>\n      <ion-input type="text" placeholder="Логин" name="login"></ion-input>\n    </ion-item>\n    <ion-item id="login-input3">\n      <ion-label></ion-label>\n      <ion-input type="password" placeholder="Пароль" name="password"></ion-input>\n    </ion-item>\n  </form>\n  <button id="login-button1" (click)="login()" ion-button color="positive" block style="font-weight:500;border-radius:40px 40px 40px 40px;margin-top:30px;background-color:#47B37D;">\n    ВОЙТИ\n  </button>\n  <button id="login-button3" ion-button block style="font-weight:500;border-radius:40px 40px 40px 40px;margin-top:21px;color:#333333; background-color:#EDEFF0">\n    <ion-icon name="trash"></ion-icon>\n    Очистить кэш\n  </button>\n  </div>\n</ion-content>'/*ion-inline-end:"/Users/dimatreefonov/projects/prognozIonicApp/src/pages/login/login.html"*/
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
+], LoginPage);
+
+//# sourceMappingURL=login.js.map
 
 /***/ })
 

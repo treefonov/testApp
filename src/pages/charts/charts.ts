@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {LoginPage} from "../login/login";
 
 /**
  * Generated class for the ChartsPage page.
@@ -14,8 +15,20 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'charts.html',
 })
 export class ChartsPage {
+  periods: any[];
+  periodsData: any[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.periods = ['2006', '2007', '2008', '2009', '2010', '2011'];
+    this.periodsData = [
+      { text: '2006', value: '2006' },
+      { text: '2007', value: '2007' },
+      { text: '2008', value: '2008' },
+      { text: '2009', value: '2009' },
+      { text: '2010', value: '2010' },
+      { text: '2011', value: '2011' },
+      { text: '2012', value: '2012' },
+    ];
   }
 
   ionViewDidLoad() {
@@ -27,7 +40,7 @@ export class ChartsPage {
     {data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B'},
     {data: [18, 48, 77, 9, 100, 27, 40], label: 'Series C'}
   ];
-  public lineChartLabels:Array<any> = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+  public lineChartLabels:Array<any> = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
   public lineChartOptions:any = {
     responsive: true
   };
@@ -144,11 +157,16 @@ export class ChartsPage {
     this.barChartDataNegative = cloneNegative;
 
     this.randomize();
+    console.log(this.periods);
     /**
      * (My guess), for Angular to recognize the change in the dataset
      * it has to change the dataset variable directly,
      * so one way around it, is to clone the data, change it and then
      * assign it;
      */
-  }
+  };
+
+  logout() {
+    this.navCtrl.push(LoginPage);
+  };
 }
