@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Доходы, млн. руб
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="podium"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding id="table-info">
+    <div ion-fixed class="filters">
+      <ion-title class="filter_title">ФИЛЬТРЫ</ion-title>
+      <form class="filter_form" id="page3-form3">
+        <ion-title class="select_title">Направление перемещения</ion-title>
+        <ion-item id="page3-select1">
+          <ion-label>
+            Направление перемещения
+          </ion-label>
+          <ion-select name=""></ion-select>
+        </ion-item>
+        <ion-title class="select_title">Вид транспорта</ion-title>
+        <ion-item id="page3-select2">
+          <ion-label>
+            Вид транспорта
+          </ion-label>
+          <ion-select name=""></ion-select>
+        </ion-item>
+        <ion-title class="select_title">Справочник</ion-title>
+        <ion-item id="page3-select3">
+          <ion-label>
+            Справочник
+          </ion-label>
+          <ion-select name=""></ion-select>
+        </ion-item>
+        <ion-title class="select_title">Страна декларант</ion-title>
+        <ion-item id="page3-select4">
+          <ion-label>
+            Страна декларант
+          </ion-label>
+          <ion-select name=""></ion-select>
+        </ion-item>
+        <ion-title class="select_title">Страна партнер</ion-title>
+        <ion-item id="page3-select5">
+          <ion-label>
+            Страна партнер
+          </ion-label>
+          <ion-select name=""></ion-select>
+        </ion-item>
+      </form>
+      <button id="apply-filters" ion-button color="positive" block class="apply_button">
+          ПРИМЕНИТЬ ФИЛЬТРЫ
+        </button>
+    </div>
+
+    <div ion-scroll class="table-block">
+    <div class="row header">
+        <div class="col">Name</div>
+        <div class="col">CTY_COMTRADE</div>
+        <div class="col">ISO</div>
+      </div>
+      <div class="row" *ngFor="let item of data">
+          <div class="col">{{item.properties.NAME}}</div>
+          <div class="col">{{item.properties.CTY_COMTRADE}}</div>
+          <div class="col">{{item.properties.ISO}}</div>
+        </div>
+    </div>
+
+</ion-content>

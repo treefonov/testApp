@@ -1,0 +1,29 @@
+<ion-content padding id="login" style="background-color:#F2F4F5;">
+<div class="login-form">
+  <h1 id="login-heading1" style="color:#000000;font-weight:600;text-align:center;">
+    Добро пожаловать
+  </h1>
+  <div id="login-markdown1" style="text-align:center;" class="show-list-numbers-and-dots">
+    <p style="color:#333333;font-size:16px;opacity:0.5;">
+      Демо-стенд HyperHive &amp; PROGNOZ
+    </p>
+  </div>
+  <form id="login-form1">
+    <ion-item id="login-input2" style="margin-bottom:17px;">
+      <ion-label></ion-label>
+      <ion-input type="text" placeholder="Логин" name="login"></ion-input>
+    </ion-item>
+    <ion-item id="login-input3">
+      <ion-label></ion-label>
+      <ion-input type="password" placeholder="Пароль" name="password"></ion-input>
+    </ion-item>
+  </form>
+  <button id="login-button1" (click)="login()" ion-button color="positive" block style="font-weight:500;border-radius:40px 40px 40px 40px;margin-top:30px;background-color:#47B37D;">
+    ВОЙТИ
+  </button>
+  <button id="login-button3" ion-button block style="font-weight:500;border-radius:40px 40px 40px 40px;margin-top:21px;color:#333333; background-color:#EDEFF0">
+    <ion-icon name="trash"></ion-icon>
+    Очистить кэш
+  </button>
+  </div>
+</ion-content>

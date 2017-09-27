@@ -1,0 +1,94 @@
+table-info {
+
+}
+
+.toolbar-background {
+    background-color: #6F98AD;
+  }
+
+.bar-button {
+    color: white;
+}
+
+.toolbar-title {
+    color: white;
+}
+
+.filters {
+    max-width: 350px;
+    width: 40%;
+    right: 0;
+    background-color: #F2F4F5;
+    height: 100%;
+}
+
+.filter_title .toolbar-title {
+    color: black;
+    margin-top: 30px;
+    margin-bottom: 25px;
+    opacity: 0.9;
+}
+
+.filter_form {
+    margin-top: 10px;
+    width: 276px;
+    margin-left: 38px;
+}
+
+.select_title .toolbar-title{
+    color: black;
+    text-align: left;
+    font-size: 14px;
+    margin-bottom: 10px;
+    opacity: 0.9;
+    font-weight: initial;
+}
+
+.item-select {
+    margin-bottom: 35px;
+}
+
+.apply_button {
+    font-weight: 500;
+    border-radius: 40px 40px 40px 40px;
+    margin-top: 50px;
+    background-color: #47B37D;
+    width: 242px;
+    margin-left: 54px;
+    height: 50px;
+    font-size: 15px;
+}
+
+.filter_form .label {
+    opacity: 0.5;
+}
+
+.filter_form .select-icon {
+    display: none;
+}
+
+.table-block {
+    width: 80%;
+}
+
+.header .col {
+    background-color:lightgrey;
+}
+
+.col {
+    border: solid 1px grey;
+    border-bottom-style: none;
+    border-right-style: none;
+}
+
+.col:last-child {
+    border-right: solid 1px grey;
+}
+
+.row:last-child .col {
+    border-bottom: solid 1px grey;
+}
+
+.scroll-content .table-block{
+    width: 65%;
+  }
