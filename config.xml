@@ -77,6 +77,11 @@
         <splash height="960" src="resources/ios/splash/Default@2x~iphone.png" width="640" />
         <splash height="480" src="resources/ios/splash/Default~iphone.png" width="320" />
     </platform>
+  <platform name="windows">
+    <preference name="windows-target-version" value="10.0" /> 
+    <preference name="windows-phone-target-version" value="10.0" /> 
+    <preference name="archs" value="x64 x86 arm" />
+  </platform>
     <engine name="android" spec="^6.2.3" />
     <engine name="ios" spec="^4.4.0" />
     <plugin name="cordova-plugin-console" spec="^1.0.5" />
